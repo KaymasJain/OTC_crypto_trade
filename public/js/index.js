@@ -41,23 +41,23 @@ function getAccountAndNetwork() {
             let text = `${account.slice(0, 6)}...${account.slice(stringLen-4, stringLen)}`;
             $('.addressCon').text(text);
             if (networkId == 1) {
-                let link = `<button class="btn btn-info btn-simple animation-on-hover btn-sm" type="button">
+                let link = `<button class="btn btn-primary btn-simple animation-on-hover btn-sm" type="button">
                                 <a class="navbar-brand" href="https://etherscan.io/address/${account}" target="_blank">${text}</a>
                             </button>`;
                 $('.navUserAdd').html(link);
             } else if (networkId == 3) {
-                let link = `<button class="btn btn-info btn-simple animation-on-hover btn-sm" type="button">
+                let link = `<button class="btn btn-primary btn-simple animation-on-hover btn-sm" type="button">
                                 <a class="navbar-brand" href="https://ropsten.etherscan.io/address/${account}" target="_blank">${text}</a>
                             </button>`;
                 $('.navUserAdd').html(link);
             } else {
-                let link = `<button class="btn btn-info btn-simple animation-on-hover btn-sm" type="button">
+                let link = `<button class="btn btn-primary btn-simple animation-on-hover btn-sm" type="button">
                                 <a class="navbar-brand">SHIFT TO MAIN NETWORK</a>
                             </button>`;
                 $('.navUserAdd').html(link);
             }
         } else {
-            let link = `<button class="btn btn-info btn-simple animation-on-hover btn-sm" type="button">NOT LOGGED-IN</button>`;
+            let link = `<button class="btn btn-primary btn-simple animation-on-hover btn-sm" type="button">NOT LOGGED-IN</button>`;
             $('.navUserAdd').html(link);
         }
         ifWeb3Configured();

@@ -15,7 +15,7 @@ function navAlerts(num) {
     } else if (num == 4) {
         title = 'Not main network';
         content = "<b>Shift to main network to use kyber trade. Kyber trade is also available on Ropsten test network for trial purposes.</b>";
-    } else if (num == 5)
+    }
     swal({ "title": title,
             "html": content,
             buttonsStyling: false,
