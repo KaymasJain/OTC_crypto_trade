@@ -60,6 +60,15 @@ function getAccountAndNetwork() {
             let link = `<button class="btn btn-primary btn-simple animation-on-hover btn-sm" type="button">NOT LOGGED-IN</button>`;
             $('.navUserAdd').html(link);
         }
+        web3.eth.getBalance(account, function (err, res) {
+            if (!err) {
+                var balanceInWei = Number(res);
+                var balance = Number(res)/(10**18);
+                $('#ethbalanceTitle').text(`ETH Balance : ${balance.toFixed(4)}`);
+            } else {
+                console.error(err);
+            };
+        });
         ifWeb3Configured();
     });
 }
