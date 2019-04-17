@@ -15,6 +15,21 @@ function navAlerts(num) {
     } else if (num == 4) {
         title = 'Not main network';
         content = "<b>Shift to main network to use kyber trade. Kyber trade is also available on Ropsten test network for trial purposes.</b>";
+    } else if (num == 5) {
+        title = 'CONFIRM TRADE TRANSACTION';
+        content = 'Confirm your transaction for swapping the tokens';
+    } else if (num == 6) {
+        title = 'TRADING TRANSACTION DEPLOYED';
+        content = `Check your transaction <a href="https://ropsten.etherscan.io/tx/${alertVar}" class="linkColor" target="_blank">here</a>.`;
+    } else if (num == 7) {
+        title = 'TRANSACTION FAILED';
+        content = `Error occured while completing your transaction.<br><b>${alertVar}</b>`;
+    } else if (num == 8) {
+        title = 'CONFIRM ALLOWANCE TRANSACTION';
+        content = 'Confirm your transaction for Allowance';
+    } else if (num == 9) {
+        title = 'ALLOWANCE TRANSACTION DEPLOYED';
+        content = `Check your transaction <a href="https://ropsten.etherscan.io/tx/${alertVar}" class="linkColor" target="_blank">here</a>. After completion deploy Trade transaction.`;
     }
     swal({ "title": title,
             "html": content,
