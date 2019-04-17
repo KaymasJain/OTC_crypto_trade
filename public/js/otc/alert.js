@@ -1,3 +1,5 @@
+var alertVar = "hey";
+
 function navAlerts(num) {
     let title, content;
     if (num == 0) {
@@ -30,6 +32,9 @@ function navAlerts(num) {
     } else if (num == 9) {
         title = 'ALLOWANCE TRANSACTION DEPLOYED';
         content = `Check your transaction <a href="https://ropsten.etherscan.io/tx/${alertVar}" class="linkColor" target="_blank">here</a>. After completion deploy Trade transaction.`;
+    } else if (num == 10) {
+        title = 'DENIED PERMISSION';
+        content = 'User denied permission to access account. Try Reloading.';
     }
     swal({ "title": title,
             "html": content,

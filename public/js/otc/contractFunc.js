@@ -5,7 +5,7 @@ function swapETHtoDAI(ethQty) {
         value: ethQty
     })
     .on('transactionHash', (txHash) => {
-        alertvar = txHash;
+        alertVar = txHash;
         navAlerts(6);
         console.log(`txHash: ${txHash}`);
     })
@@ -19,12 +19,12 @@ function swapETHtoDAI(ethQty) {
 
 function swapDAItoETH(daiQty) {
     navAlerts(5);
-    mainContract.methods.swapDAIToETH(daiQty).send({
+    mainContract.methods.swapDAIToETH(String(daiQty)).send({
         from: account,
         value: 0
     })
     .on('transactionHash', (txHash) => {
-        alertvar = txHash;
+        alertVar = txHash;
         navAlerts(6);
         console.log(`txHash: ${txHash}`);
     })
@@ -84,20 +84,16 @@ async function getDAIBal() {
 // get user approval
 function setDAIAllowance() {
     navAlerts(8);
-    var allowanceAmt = 1000000000000; // 1 trillion
+    var allowanceAmt = 1000000000000000; // 1 trillion
     allowanceAmt = web3.utils.toWei(allowanceAmt.toString(), 'ether'); // 18 decimal'ed
     daiContract.methods.approve(mainContractAdd, allowanceAmt.toString()).send({
-        from: userAccount,
+        from: account,
         value: 0
     })
     .on('transactionHash', (txHash) => {
         alertVar = txHash;
         navAlerts(9);
         console.log(`txHash: ${txHash}`);
-        txnModal(txHash, {
-            pending: "Allowance Pending",
-            confirm: "Yay! Allowance Confirmed"
-        });
     })
     .on('error', (err) => {
         alertVar = err;

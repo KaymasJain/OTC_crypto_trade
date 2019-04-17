@@ -1,9 +1,36 @@
 {% extends "templates/index.html" %}
 {% block content %}
 
-<h1 class="text-center" style="margin-top: 30px">OTC Trading Platform</h1>
+<div class="mainBox row" style="margin-top: 30px">
+    <div class="card col-4" style="padding-bottom: 20px">
+        <center><img class="card-img-top cardImg" src="eth.svg" alt="Card image cap"></center>
+        <div class="card-body">
+            <h2 class="card-title text-center">ETH</h2>
+            <h6 class="card-text text-center">Ethereum</h6>
+            <p class="card-text text-center ETHBalance h4">...</p>
+            <p class="card-text text-center ETHLiquidity h4">...</p>
+        </div>
+    </div>
+    <div class="col-4 text-center">
+        <i class="tim-icons icon-double-right toggleIcon text-center"></i>
+        <h6 class="" style="margin-top: 20px">TOGGLE</h6>
+    </div>
+    <div class="card col-4" style="padding-bottom: 20px">
+        <center><img class="card-img-top cardImg" src="dai.svg" alt="Card image cap"></center>
+        <div class="card-body">
+            <h2 class="card-title text-center">DAI</h2>
+            <h6 class="card-text text-center">DAI Stable Coin</h6>
+            <p class="card-text text-center DAIBalance h4">...</p>
+            <p class="card-text text-center DAILiquidity h4">...</p>
+        </div>
+    </div>
+</div>
 
-<h2 class="text-center" style="margin-top: 30px" id="ethbalanceTitle">ETH Balance: ...</h2>
+<div class="form-group forMaxWidth">
+    <input type="number" class="form-control amountInput" placeholder="Enter ETH Amount">
+    <div class="expectedRate">Expected DAI: 0</div>
+    <center><button class="btn btn-success animation-on-hover swapBut" type="button">SWAP</button></center>
+</div>
 
 
 {% endblock %}
@@ -11,10 +38,10 @@
 {% block lastContent %}
 
 <script src="js/otc/varDefines.js"></script>
-{# <script src="js/otc/abi.js"></script> #}
+<script src="js/otc/abi.js"></script>
 <script src="js/otc/afterWeb3Check.js"></script>
 <script src="js/otc/alert.js"></script>
-{# <script src="js/otc/contractFunctions.js"></script> #}
-{# <script src="js/otc/main.js"></script> #}
+<script src="js/otc/contractFunc.js"></script>
+<script src="js/otc/main.js"></script>
 
 {% endblock %}
