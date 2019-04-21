@@ -53,7 +53,7 @@ $('.swapBut').click(function() {
     if (!toggle) {
         swapETHtoDAI(valueInWei);
     } else {
-        if (DAIAllowance > 0) {
+        if (Number(DAIAllowance) > 0) {
             swapDAItoETH(valueInWei);
         } else {
             setDAIAllowance();

@@ -35,7 +35,7 @@ async function InitWeb3() {
             await ethereum.enable(); // Request account access if needed
             account = await getAccount();
         } catch (error) {
-            navAlerts('User denied permission');
+            navAlerts(10);
         }
         await web3Check();
         return true;
@@ -59,7 +59,7 @@ async function InitWeb3() {
  * initiated from asynced InitWeb3() function below
  */
 // on load
- window.addEventListener('load', async () => {
+window.addEventListener('load', async () => {
     InitWeb3();
 });
 

@@ -15,10 +15,10 @@ function ifWeb3Configured() {
     }
 }
 
-function load() {
+async function load() {
     ethBal();
     daiBal();
     updateETHLiquidity();
     updateDAILiquidity();
-    DAIAllowance = getAllowance();
+    DAIAllowance = await getAllowance();
 }
