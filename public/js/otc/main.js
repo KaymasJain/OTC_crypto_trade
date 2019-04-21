@@ -59,4 +59,35 @@ $('.swapBut').click(function() {
             setDAIAllowance();
         }
     }
-})
+});
+
+
+async function listEthOrders() {
+    var getHead = String(await ETHHead());
+    await getEachOrderETH(getHead);
+}
+
+async function getEachOrderETH(head) {
+    var orderDetails = await ETHOrders(head);
+    console.log(orderDetails[2]/(10**18));
+    if (orderDetails[3] == "0x0000000000000000000000000000000000000000000000000000000000000000") {
+        return;
+    } else {
+        await getEachOrderETH(orderDetails[3]);
+    }
+}
+
+async function listDaiOrders() {
+    var getHead = String(await DAIHead());
+    await getEachOrderDAI(getHead);
+}
+
+async function getEachOrderDAI(head) {
+    var orderDetails = await DAIOrders(head);
+    console.log(orderDetails[2]/(10**18));
+    if (orderDetails[3] == "0x0000000000000000000000000000000000000000000000000000000000000000") {
+        return;
+    } else {
+        await getEachOrderDAI(orderDetails[3]);
+    }
+}
